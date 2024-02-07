@@ -17,9 +17,6 @@ class CreateStockLocationsTable extends Migration
             $table->id();
             $table->bigInteger('code')->unique();
             $table->string('name')->nullable();
-            $table->boolean('is_active')->default(1);
-            $table->string('created_by')->nullable();
-            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

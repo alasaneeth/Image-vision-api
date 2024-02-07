@@ -17,8 +17,6 @@ class CreateUserRolesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->string('modified_by')->nullable();
-            $table->date('modified_at')->nullable();
             $table->timestamps();
 
             $table->foreign("user_id")
