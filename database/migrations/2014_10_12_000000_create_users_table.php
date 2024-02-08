@@ -23,6 +23,10 @@ class CreateUsersTable extends Migration
             $table->string('contact');
             $table->string('nic');
             $table->string('remarks');
+            $table->boolean('is_active')->default(true);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('is_verified')->default(false);
+            $table->string('verification_code')->nullable();
             $table->timestamps();
         });
     }

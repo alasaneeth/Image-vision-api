@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStockLocationsTable extends Migration
+class CreateBizxUserTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateStockLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('stock_locations', function (Blueprint $table) {
+        Schema::create('bizx_user_types', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('code')->unique();
             $table->string('name')->nullable();
@@ -31,6 +31,6 @@ class CreateStockLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stock_locations');
+        Schema::dropIfExists('bizx_user_types');
     }
 }
