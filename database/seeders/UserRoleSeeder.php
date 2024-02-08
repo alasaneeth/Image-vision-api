@@ -20,19 +20,7 @@ class UserRoleSeeder extends Seeder
         ]);
         DB::table('user_roles')->insert([
             'user_id' => '2',
-            'name' => "admin",
-        ]);
-        DB::table('user_roles')->insert([
-            'user_id' => '3',
-            'name' => "manager",
-        ]);
-        DB::table('user_roles')->insert([
-            'user_id' => '4',
             'name' => "cashier",
-        ]);
-        DB::table('user_roles')->insert([
-            'user_id' => '5',
-            'name' => "superAdmin",
         ]);
     }
 }

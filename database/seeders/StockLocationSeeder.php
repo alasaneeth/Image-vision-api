@@ -14,64 +14,22 @@ class StockLocationSeeder extends Seeder
      */
     public function run()
     {
-        //---------------All Focus----------------------//
-
-        // DB::table('stock_locations')->insert([
-        //     'code'=>21510000001,
-        // 	'name'=>'Workshop',
-        // 	'is_active'=>1
-        // ]);
-
-        //-----------------ISITHA CLIENT---------------//
-        // DB::table('stock_locations')->insert([
-        //     'code'=>21510000001,
-        // 	'name'=>'Workshop',
-        // 	'is_active'=>1
-        // ]);
-        // DB::table('stock_locations')->insert([
-        //     'code'=>21510000001,
-        // 	'name'=>'Branch 1',
-        // 	'is_active'=>1
-        // ]);
-        // DB::table('stock_locations')->insert([
-        //     'code'=>21510000002,
-        // 	'name'=>'Branch 2',
-        // 	'is_active'=>1
-        // ]);
-        // DB::table('stock_locations')->insert([
-        //     'code'=>21510000003,
-        // 	'name'=>'Branch 3',
-        // 	'is_active'=>1
-        // ]);
-
-//--------------Lace Emporium----------------------------//
 
    DB::table('stock_locations')->insert([
             'code'=>21510000001,
-        	'name'=>'Star',
-        	'is_active'=>1
+        	'name'=>'Kalmunai'
+        	
         ]);
         DB::table('stock_locations')->insert([
             'code'=>21510000002,
-        	'name'=>'Main ',
-        	'is_active'=>1
+        	'name'=>'baticalo',
         ]);
         DB::table('stock_locations')->insert([
             'code'=>21510000003,
-        	'name'=>'Bank',
-        	'is_active'=>1
+        	'name'=>'Trinco',
+        	
         ]);
-        DB::table('stock_locations')->insert([
-            'code'=>21510000004,
-        	'name'=>'Nizamiya',
-        	'is_active'=>1
-        ]);
-        DB::table('stock_locations')->insert([
-            'code'=>21510000005,
-        	'name'=>'Shop',
-        	'is_active'=>1
-        ]);
-
+      
 
         // DB::table('stock_locations')->insert([
         //     'code'=>21510000004,

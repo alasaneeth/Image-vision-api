@@ -18,7 +18,7 @@ class StockLocationController extends Controller
     public function index()
     {
         try{
-            $location  = StockLocation::select('code','name')->where('is_active', '=', 1)->get();
+            $location  = StockLocation::select('code','name')->get();
             return response()->json(['status' => 200, 'stockLocation' =>  $location ]);
         }catch (\Exception $e) {
             return response()->json([
