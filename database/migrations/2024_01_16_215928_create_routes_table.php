@@ -20,6 +20,7 @@ class CreateRoutesTable extends Migration
              $table->bigInteger('courier_code')->unique();
             $table->string('from')->nullable();
             $table->string('to')->nullable();
+            $table->decimal('courier_fees')->nullable();
             $table->timestamps();
         });
     }

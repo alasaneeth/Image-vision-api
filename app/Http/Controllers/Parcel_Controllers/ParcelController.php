@@ -238,6 +238,79 @@ try {
 }
 }
 
+public function deliverdParcel(Request $request)
+{
+try {
+    $parcels = Parcel::select(
+        'code',
+        'customer_code',
+        'weight',
+        'from_location_code',
+        'to_location_code',
+        'route_code',
+        'pickup_date',
+        'status',
+        'created_at',
+        'updated_at',
+    ) 
+    ->with('parcelImages')
+    ->with('customer') 
+    ->with('route')
+    ->with('route.courier')
+    ->with('fromLocation')
+    ->with('toLocation')
+    //->where('status', '<>', MultiPurposeStatus::DELIVERY)
+    ->where('from_location_code', '=', getCurrentLocationCode($request))
+    ->where('status', '=', MultiPurposeStatus::DELIVERY)
+
+    ->get();
+
+    return response()->json([
+        'status' => 200,
+        'parcels' => $parcels
+    ]);
+} catch (\Exception $e) {
+    throw new Exception($e);
+}
+}
+
+
+public function rejectedparcel(Request $request)
+{
+try {
+    $parcels = Parcel::select(
+        'code',
+        'customer_code',
+        'weight',
+        'from_location_code',
+        'to_location_code',
+        'route_code',
+        'pickup_date',
+        'status',
+        'created_at',
+        'updated_at',
+    ) 
+    ->with('parcelImages')
+    ->with('customer') 
+    ->with('route')
+    ->with('route.courier')
+    ->with('fromLocation')
+    ->with('toLocation')
+    //->where('status', '<>', MultiPurposeStatus::DELIVERY)
+    ->where('from_location_code', '=', getCurrentLocationCode($request))
+    ->where('status', '=', MultiPurposeStatus::REJECT)
+
+    ->get();
+
+    return response()->json([
+        'status' => 200,
+        'parcels' => $parcels
+    ]);
+} catch (\Exception $e) {
+    throw new Exception($e);
+}
+}
+
 
 
 public function update(Request $request, $status)

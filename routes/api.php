@@ -273,6 +273,10 @@ Route::post('images', [ImageController::class, 'upload'])->name('images');
     Route::get('parcel-search/{key}', [ParcelController::class, 'parcelSearch']);
     Route::get('fetch-parcel-details/{key}', [ParcelController::class, 'fetchParcelDetails']);
     Route::get('received-parcel', [ParcelController::class, 'receivedParcel']);
+    Route::get('deliverd-parcel', [ParcelController::class, 'deliverdParcel']);
+    Route::get('rejected-parcel',[ParcelController::class,'rejectedparcel']);
+
+    
 
 
 

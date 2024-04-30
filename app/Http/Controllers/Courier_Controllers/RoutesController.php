@@ -21,6 +21,7 @@ class RoutesController extends Controller
                 'courier_code',
                 'from' ,
                 'to',
+                'courier_fees',
                 'created_at',
                 'updated_at', 
             ) ->with([
@@ -46,6 +47,7 @@ class RoutesController extends Controller
                 'courier_code',
                 'from' ,
                 'to',
+                'courier_fees',
                 'created_at',
                 'updated_at', 
 
@@ -80,6 +82,7 @@ class RoutesController extends Controller
                 'courier_code' => $request->courier['code'],
                 'from' => $request->from,
                 'to'=>$request->to,
+                'courier_fees'=>$request->courier_fees,
                 'created_at' => getDateTimeNow(),
                 'updated_at' => getDateTimeNow(),
             ]);
@@ -99,7 +102,7 @@ class RoutesController extends Controller
 
     public function routeSearchSearch($key)
     {
-        // try {
+        try {
 
             $routes = Routes::select(
                 'code',
@@ -107,6 +110,7 @@ class RoutesController extends Controller
                 'courier_code',
                 'from' ,
                 'to',
+                'courier_fees',
                 'created_at',
                 'updated_at', 
             )->with([
@@ -124,9 +128,9 @@ class RoutesController extends Controller
                 'status' => 200,
                 'routes' => $routes
             ]);
-        // } catch (\Exception $e) {
-        //     throw new Exception($e);
-        // }
+        } catch (\Exception $e) {
+            throw new Exception($e);
+        }
     }
 
       public function update(Request $request, $id)

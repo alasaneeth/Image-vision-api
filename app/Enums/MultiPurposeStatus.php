@@ -21,4 +21,5 @@ final class MultiPurposeStatus extends Enum
     const DELIVERY = 7;
     CONST ACCEPT = 8;
     CONST REJECT = 9;
+    const RETURN = 10;
 }
